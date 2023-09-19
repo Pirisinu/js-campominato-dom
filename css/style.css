@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper-box{
+  background-color: cornflowerblue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.wrapper-box button{
+  width: 100%;
+  border: none;
+  font-size: 50px;
+}
+.container{
+  background-color: blueviolet;
+  height: 650px;
+  width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.difficulty-choice{
+  background-color:crimson;
+  height: 650px;
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.difficulty-choice select{
+  text-align: center;
+  height: 50px;
+}
+.d-none{
+  display: none;
+}
+.square{
+  border: 1px solid white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+}
+.square span{
+  display: none;
+}
+.square.clicked span{
+  display: block;
+}
+
+.square.easy{
+  width: calc(100% / 10);
+}
+.square.mid{
+  width: calc(100% / 9);
+}
+.square.hard{
+  width: calc(100% / 8);
+}
