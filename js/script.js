@@ -30,9 +30,6 @@ function init(){
     const square = createBox(i);
     
     //Vado ad creare con un randomizzatore le bombe
-    randomNum(1, (difficultySelected.value)){
-       square.classList.add('bomb');
-    }
 
 
     //EventListner al click
