@@ -47,6 +47,9 @@
   align-items: center;
   aspect-ratio: 1/1;
 }
+.square.bomb{
+  background-color: red;
+}
 .square span{
   display: none;
 }
