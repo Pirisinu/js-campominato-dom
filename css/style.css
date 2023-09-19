@@ -14,7 +14,7 @@
 .wrapper-box button{
   width: 100%;
   border: none;
-  font-size: 50px;
+  font-size: 20px;
 }
 .container{
   background-color: blueviolet;
@@ -61,5 +61,5 @@
   width: calc(100% / 9);
 }
 .square.hard{
-  width: calc(100% / 8);
+  width: calc(100% / 7);
 }

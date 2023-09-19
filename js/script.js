@@ -1,35 +1,37 @@
  /* 
 **Svolgimento**
 
-1. Richiamo i vari elementi dall'html 
-2. Mi vado a creare varie funzioni
-  - (1)Funzione di init() programma
-  - (2)Funzione bottone di avvio
-  - (3)Funzione generatore random di numeri
-  - (4)Funzione coloratore di classe con parametro (pari o dispari)
-  - (5)Funzione generatrice di div
-  - (6)Funzione reset
- */
 
+ */
+//ELEMENT
 const squareContainer = document.querySelector('.container');
 const difficultyChoice = document.querySelector('.difficulty-choice');
-const opt = document.querySelector('option');
-reset()
-console.log(opt.value)
+let difficultySelected;
+let difCounter;
+difficultyChoice.append(btnStart());
+
+
+
 /* FUNZIONI GENERALI */
 //INIT FUNCTION
 function init(){
 
-  for (let i = 1; i <= 100; i++) {
+  difficultySelected = document.querySelector('#select-difficulty');
+  console.log(difficultySelected.value)
+
+
+  for (let i = 1; i <= difficultySelected.value; i++) {
 
     const square = createBox(i);
+
+
     square.addEventListener('click', function(){
       console.log(square.id)
       this.classList.toggle('clicked');
     });
     squareContainer.append(square);
   }
-
+  difficultySelected.value = '';
 }
 
 //BTN START FUNCTION
@@ -40,10 +42,10 @@ function btnStart(){
   btn.innerHTML= 'Scegli prima la difficoltà, <br/> poi clicca qui per iniziare.';
   //Aggiungo un evento al click per far iniziare il gioco
   btn.addEventListener('click', function(){
-    difficultyChoice.classList.add('d-none');
-    this.classList.add('d-none');
+
+    reset()
     init();
-    console.log(opt.value)
+    
   });
 
   return btn;
@@ -58,6 +60,14 @@ function randomNum(min, max){
 function createBox(index){
   const square = document.createElement('div');
   square.classList.add('square', 'easy');
+  if (difficultySelected.value == 81) {
+    square.classList.add('mid');
+    square.classList.remove('easy');
+  }
+  else if (difficultySelected.value == 49) {
+    square.classList.add('hard');
+    square.classList.remove('easy');
+  }
   square.innerHTML = `<span>${index}</span>`;
   square.id = index;
 
@@ -66,7 +76,5 @@ function createBox(index){
 //RESET FUNCTION
 function reset(){
   squareContainer.innerHTML = '';
-  const initButton = btnStart();
-  squareContainer.append(initButton)
-  difficultyChoice.classList.remove('d-none');
+
 }
