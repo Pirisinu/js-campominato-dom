@@ -12,6 +12,7 @@ let difCounter;
 
 const bombTot = 16;
 const bombFind = [];
+let idBomb = [];
 
 difficultyChoice.append(btnStart());
 
@@ -30,7 +31,7 @@ function init(){
     const square = createBox(i);
     
     //Vado ad creare con un randomizzatore le bombe
-
+    
 
     //EventListner al click
     square.addEventListener('click', function(){
@@ -68,11 +69,14 @@ function randomNum(min, max){
  return Math.floor(Math.random() * (max - min +1) + min);
 }
 
+for(let i=1; i <= bombTot; i++) {
 function randomIdBomb(bombTot){
-  const idBomb = Math.floor(Math.random() * bombTot);
-    console.log(idBomb);
-    return idBomb
-}
+    idBomb = Math.floor(Math.random() * bombTot);
+    idBomb.appwm
+    return idBomb;
+  }
+  console.log(randomIdBomb(idBomb));
+  }
 
 //ELEMENT GENERATOR FUNCTION
 function createBox(index){
